@@ -10,5 +10,8 @@ pipeline {
               '''
             }
         }
+        withAWS(region:'us-west-2') {
+            s3Upload(file:'index.html', bucket:'udacity-jenkins-project-1234', path:'index.html')
+        }
     }
 }
